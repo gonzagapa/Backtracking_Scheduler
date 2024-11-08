@@ -12,6 +12,7 @@ import satisfaccionderestricciones.CSP;
 public class Problema extends CSP {
     
     private Tutorado[] listaTutorados = null;
+    String hola = "Hola";
     
     @Override
     public void crearVariables(){
