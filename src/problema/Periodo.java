@@ -11,11 +11,18 @@ public class Periodo {
     private LocalTime horaFinal; 
     private Tutor tutor; 
     
+    public Periodo(){
+        this.tutor = new Tutor();
+    }
+    
     public Periodo(String dia, int horaInicio, int horaFinal, String nombreTutor){
-        this.dia = dia;
+        this.dia = dia.toLowerCase();
         this.horaInicio = LocalTime.of(horaInicio, 0); 
         this.horaFinal = LocalTime.of(horaFinal, 0); 
-        this.tutor = new Tutor(nombreTutor);
+        
+        //Comprobacion de tutor, si ya existe entonces NO no crear un nuevo objeto Tutor
+        Tutor aux = Tutor.buscarTutor(nombreTutor);
+        this.tutor = (aux != null) ? aux: new Tutor(nombreTutor);
     }
     
 
@@ -31,10 +38,15 @@ public class Periodo {
         return tutor;
     }
     
+    
     public void AsignarTutorado(Tutorado tutorado){
         tutor.añadirTutorado(tutorado);
     }
     
+    public void quitarTutorado(Tutorado tutorado){
+        tutor.getTutorados().remove(tutorado);
+        tutorado.disminuirSesion();
+    }
     
     //Metodos
     public Object[] obtenerDiaHora(){

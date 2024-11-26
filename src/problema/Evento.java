@@ -9,14 +9,15 @@ package problema;
 //Los eventos serian las variables de mi problema
 public class Evento {
     private Tutorado tutorado; 
-    //private Tutor tutor; 
     private String salon; 
     private Periodo periodo; 
     
    
 
-    public Evento() {
-        
+    public Evento(){
+        this.tutorado = new Tutorado();
+        this.periodo = new Periodo();
+        this.salon = "";
     }
 
     public Evento(Tutorado tutorado,String salon, Periodo periodo) {
@@ -27,8 +28,18 @@ public class Evento {
         this.tutorado = tutorado;
     } 
 
+    public String getSalon() {
+        return salon;
+    }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+    
+
     public void setTutorado(Tutorado tutorado) {
         this.tutorado = tutorado;
+        periodo.AsignarTutorado(tutorado);
     }
 
     public void setSalon(String salon) {
@@ -56,7 +67,11 @@ public class Evento {
     }
     
     
-    
+    public void quitarValores(){
+        this.periodo = null;
+        this.salon = null;
+        this.tutorado = null;
+    }
     
 } 
 

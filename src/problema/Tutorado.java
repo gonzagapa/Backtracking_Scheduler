@@ -57,7 +57,10 @@ public class Tutorado {
         this.sesiones = sesiones;
     }
     public void aumentarSesion(){
-        this.sesiones = +1;
+        this.sesiones += 1;
+    }
+    public void disminuirSesion(){
+        this.sesiones = (sesiones != 0) ? sesiones - 1 : 0;
     }
     @Override
     public String toString() {

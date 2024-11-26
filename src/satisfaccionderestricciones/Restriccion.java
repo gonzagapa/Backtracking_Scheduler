@@ -1,6 +1,7 @@
 package satisfaccionderestricciones;
 
 import java.util.List;
+import problema.Evento;
 
 /**
  * @author Rafael Rivera-Lopez
