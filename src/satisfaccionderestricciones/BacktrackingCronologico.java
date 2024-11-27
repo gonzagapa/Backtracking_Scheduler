@@ -23,8 +23,15 @@ public class BacktrackingCronologico {
   public Estado buscarSolucion() {
     Estado asignacion = new Estado();
     
-    //Si nos falta alumnos por asignar, k tomara la posicion de alumno por asignar
-    int k = problema.getListaTutorados().indexOf(problema.obtenerTutoradoSinSesion());
+    //Si nos falta alumnos que no tiene el minimo numero de sesion, k tomara la posicion de alumno por asignar
+    int k = problema.getListaTutorados().indexOf(problema.obtenerTutoradoSinMinimoNumeroSesion());
+    
+    //Si k tiene -1, quiere decir que no hay alumnos que les haga falta una sesion
+    //Por lo que asignamos el indice del primer tutorado que solo tenga una sola sesion, para que vuelva a iniciar la busqueda
+    k = (k == -1) ? problema.getListaTutorados().indexOf(problema.obtenerTutoradoSinMaximoNumSesion()): k;
+    System.out.println("Valor de k:" + k);
+      System.out.println("Periodos restantes pasados:" + Problema.getPeriodosRestantesSemana().size());
+    
     return backtrackingRecursivo(k, asignacion);
   }
   
@@ -32,24 +39,38 @@ public class BacktrackingCronologico {
   //k:lleva el control de las asignaciones hechas. Valor inicial = 1
   //Estado: tupla de asignaciones {(xi,vi),(xj,vj)} 
   private Estado backtrackingRecursivo(int k, Estado estado) {
-    seleccionar(k, estado);  // selecciona un valork del dominio con la variable k
-     // System.out.println("Periodos totales:" + problema.periodos.size() );
-    if (comprobar(k, estado)) { //Si las asignaciones satisfacen las restricciones 
+    seleccionar(k, estado);  
+   
+    //Si las asignaciones satisfacen las restricciones 
+    if (comprobar(k, estado)) { 
         //Evaluar la cantidad de periodos ya asignados 
         //Evaluar si ya llegamos a la cantidad maxima de periodos por semana  O si ya no tenemos mas variables disponibles
-      
-        if(problema.dominio.getPeriodosYaAsignados().size()-1 == problema.periodos.size() -1){
+        if(Problema.dominio.getPeriodosYaAsignados().size()-1 == Problema.periodos.size() -1){
             System.out.println("EXITO!");
             
+            //Limpiamos los periodos restantes
+             Problema.getPeriodosRestantesSemana().clear();
+
+            
             //Si ya terminamos de asignar los periodos de este mes, generamos nuevos para el siguiente 
-            problema.dominio.generarNuevosPeriodos();
+            Problema.dominio.generarNuevosPeriodos();
+            
+           
             return estado; //FIN   
             //Volver a generar periodos
            
         }
         else if(k == problema.getVariables().size() - 1){
             System.out.println("EXITO!");
+            //Asignamos periodos que sobraron al problema
+            Problema.setPeriodosRestantesSemana(Problema.dominio.getPeriodosPorAsignar());
             
+            //En dando caso que tengamos periodos sobrantes, esto se agregan a los periodos del dominio
+            //if(!Problema.getPeriodosRestantesSemana().isEmpty()) Problema.dominio.generarNuevosPeriodos(Problema.getPeriodosRestantesSemana());
+            
+            //Generamos nuevos periodos para las futuras iteraciones
+            Problema.dominio.generarNuevosPeriodos();
+            System.out.println("Periodos ya asignados " + Problema.dominio.getPeriodosYaAsignados());
             return estado; //FIN  
         }
         

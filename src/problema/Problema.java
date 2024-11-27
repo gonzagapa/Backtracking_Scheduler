@@ -19,12 +19,17 @@ public class Problema extends CSP {
     private  List<Tutorado> listaTutorados = null;
     public static DominioEvento dominio; //Aqui contien los dominios de cada evento
     public static ArrayList<Periodo> periodos = new ArrayList();
+    private static ArrayList<Periodo> periodosRestantesSemana = new ArrayList();
     public static ArrayList<String> variablesAsignadas = new ArrayList();
+    private static final int NUM_MINIMO_SESION = 1; //Numero de sesiones minimas por alumno
+    private static final int NUM_MAX_SESIONES = 2; //numero de sesiones maxima por alumno
+    private static final int NUM_ALUMNOS =50; //Cantidad de alumnos que vamos agendar una sesion
+    public static int NUM_PERIODOS = 25;
     
     @Override
     public void crearVariables(){
         //Creamos la lista de alumnos
-        crearAlumnos(50);
+        crearAlumnos(NUM_ALUMNOS);
         
         //Creamos a lista de eventos;
         List<String> eventos = crearEventos();
@@ -169,13 +174,42 @@ public class Problema extends CSP {
         return false;
     }
     //Devuelve el primer alumno sin sesion asignada
-    public Tutorado obtenerTutoradoSinSesion(){
+    public Tutorado obtenerTutoradoSinMinimoNumeroSesion(){
         for(Tutorado tutorado:listaTutorados){
-                if(tutorado.getSesiones() == 0) return tutorado;
+                if(tutorado.getSesiones() < NUM_MINIMO_SESION) return tutorado;
         }
         return null;
     }
     
+    public boolean tutoradosSinMinimoNumeroSesion(){
+        for(Tutorado tutorado: listaTutorados){
+                if(tutorado.getSesiones() < NUM_MINIMO_SESION) return true;
+        }
+        return false;
+    }
     
+    //Devuelve el primer tutorado con una sola sesion
+     public boolean tutoradoSinMaximoNumSesion(){
+        for(Tutorado tutorado:listaTutorados){
+                if(tutorado.getSesiones() < NUM_MAX_SESIONES) return true;
+        }
+        return false;
+    }
+    
+    //Devuelve el primer tutorado con una sola sesion
+     public Tutorado obtenerTutoradoSinMaximoNumSesion(){
+        for(Tutorado tutorado:listaTutorados){
+                if(tutorado.getSesiones() < NUM_MAX_SESIONES) return tutorado;
+        }
+        return null;
+    }
+
+    public static ArrayList<Periodo> getPeriodosRestantesSemana() {
+        return periodosRestantesSemana;
+    }
+
+    public static void setPeriodosRestantesSemana(ArrayList<Periodo> periodosRestantesSemana) {
+        Problema.periodosRestantesSemana = periodosRestantesSemana;
+    }
     
 }

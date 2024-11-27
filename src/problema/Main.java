@@ -2,8 +2,7 @@
 package problema;
 
 
-import satisfaccionderestricciones.BacktrackingCronologico;
-import satisfaccionderestricciones.Estado;
+
 
 /**
  *
@@ -15,7 +14,6 @@ public class Main {
          
        Horario horario = new Horario();
        horario.generarHorario();
-        
-       
+     
     }
 }

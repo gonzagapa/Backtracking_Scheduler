@@ -24,6 +24,12 @@ public class DominioEvento {
       this.salones = salones;
   }
 
+    public void setPeriodosPorAsignar(ArrayList<Periodo> periodosPorAsignar) {
+        this.periodosPorAsignar = periodosPorAsignar;
+    }
+    
+    
+
     public ArrayList<Periodo> getPeriodosPorAsignar() {
         return periodosPorAsignar;
     }
@@ -67,6 +73,21 @@ public class DominioEvento {
         periodosPorAsignar = new ArrayList(Problema.periodos);
         periodosYaAsignados.clear();
     }
-    //Obtener el primer alumno que falte por asignar 
+    
+    public void generarNuevosPeriodos(ArrayList<Periodo> periodos){
+        periodosPorAsignar = new ArrayList(periodos);
+        //periodosYaAsignados.clear();
+    }
+    //Obtener buscar un periodo donde se encuentre un profesor en particular
+    public Periodo buscarPeriodoXTutor(String nombreTutor){
+        Periodo aux = null;
+        for(Periodo periodo: periodosPorAsignar){
+              if(periodo.getTutor().getNombre().equals(nombreTutor)) {
+                  aux= periodo;
+                  break;
+              }
+        }  
+        return aux;
+    }
     
 }

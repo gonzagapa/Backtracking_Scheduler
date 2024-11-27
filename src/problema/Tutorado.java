@@ -12,17 +12,22 @@ public class Tutorado {
     private int id; 
     private String nombre; 
     private int sesiones; 
+    private String nombreTutor;
     
     public Tutorado(){
         this.id = totalTutorados;
         totalTutorados +=1;
-        this.sesiones =0;   
+        this.sesiones =0;  
+         this.nombreTutor = "";
+         
     } 
 
     public Tutorado(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
         this.sesiones =0;   
+        this.nombreTutor = "";
+        
     }
     
     
@@ -60,11 +65,19 @@ public class Tutorado {
         this.sesiones += 1;
     }
     public void disminuirSesion(){
-        this.sesiones = (sesiones != 0) ? sesiones - 1 : 0;
+        this.sesiones = (sesiones > 0) ? sesiones - 1 : 0;
     }
     @Override
     public String toString() {
         return "Tutorado{" + "id=" + id + ", sesiones=" + sesiones + '}';
+    }
+
+    public String getNombreTutor() {
+        return nombreTutor;
+    }
+
+    public void setNombreTutor(String nombreTutor) {
+        this.nombreTutor = nombreTutor;
     }
     
     

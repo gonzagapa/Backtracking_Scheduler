@@ -23,16 +23,30 @@ public class Estado extends HashMap<String, Evento> {
   }
 
   
-  //La variable sig nos indica si estamos haciendo una reasigancion de valores a un evento que ya tenia valor asignado. 
+
   public void setAsignacion(String key, Evento valor, int pos, boolean cambio) {
       if(valor != null){
+          Periodo periodo = null;
+          Periodo aux = null;
           //Caso que se este reasigando al mismo alumno un nuevo periodo 
           if(valor.getTutorado().getSesiones() > 0 && cambio == true) valor.getTutorado().disminuirSesion();
           
-          //Con sig, nos movemos un periodo hacia adelante para asignarle a valor otro periodo
-        Periodo periodo = Problema.dominio.getPeriodosPorAsignar().getFirst();
+          Tutorado tutorado = Problema.dominio.getTutorados().get(pos);
+          
+          //En dado caso que alumno no tenga un tutor asignado, asignar cualquier periodo.
+            if(tutorado.getNombreTutor().isEmpty()){
+               periodo = Problema.dominio.getPeriodosPorAsignar().getFirst();
+            }else{
+                //Caso contrario, buscar un periodo por asignar que si lo tenga
+                aux = valor.getPeriodo(); 
+                periodo = Problema.dominio.buscarPeriodoXTutor(tutorado.getNombreTutor());
+                if(periodo == null) System.out.println("No encontramos una sesion para el alumno " + tutorado.getId()+ " con el tutor:" + aux.getTutor());
+                 //**** CHECAR: aqui se esta agendando con otro tutor.
+                //periodo = (periodo != null) ? periodo: aux;
+                periodo = (periodo != null) ? periodo:Problema.dominio.getPeriodosPorAsignar().getFirst() ;
+            }
         
-        Tutorado tutorado = Problema.dominio.getTutorados().get(pos);
+        
         
         //Esto procura que el pos se mantenga en un rango de valores existentes. 
         String salon = Problema.dominio.getSalones().get(pos % Problema.dominio.getSalones().size() );
@@ -58,8 +72,9 @@ public class Estado extends HashMap<String, Evento> {
         if(this.get(var) != null){
              this.get(var).getPeriodo().quitarTutorado(this.getAsignacion(var).getTutorado());
                 Problema.dominio.quitarPeriodoAsignado(this.get(var).getPeriodo());
+                System.out.println("Eliminamos el evento:" + this.remove(var));
+
         }
-        System.out.println("Eliminamos el evento:" + this.remove(var));
         
   }
 

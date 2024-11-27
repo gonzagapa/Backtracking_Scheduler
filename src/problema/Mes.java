@@ -46,7 +46,7 @@ public class Mes {
     public String toString() {
         String aux = "";
         for(Semana semana: semanas){
-            if(!semana.getEventosSemana().isEmpty()){
+            if(!semana.semanaSinEventos()){
                 aux += semana;
             }
             

@@ -39,6 +39,7 @@ public class Evento {
 
     public void setTutorado(Tutorado tutorado) {
         this.tutorado = tutorado;
+        this.tutorado.setNombreTutor(periodo.getTutor().getNombre());
         periodo.AsignarTutorado(tutorado);
     }
 

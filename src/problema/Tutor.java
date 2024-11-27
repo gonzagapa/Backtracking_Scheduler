@@ -51,7 +51,7 @@ public class Tutor {
     }
 
     public void añadirTutorado(Tutorado tutorado){
-        tutorados.add(tutorado);
+        if(!tutorados.contains(tutorado)) tutorados.add(tutorado);
         tutorado.aumentarSesion();
     }
 
