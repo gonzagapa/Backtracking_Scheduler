@@ -121,26 +121,26 @@ public class Horario {
                 //Iteramos sobre las semanas
                 for(Semana semana: mes.getSemanas()){
                     //Si la semana ya tiene el maximo total de eventos asignados, pasamos a la siguiente
-                     if(semana.comprobarCantidadEventos()) continue;
-                     
-                     if(problema.tutoradoSinMaximoNumSesion()){
-                        System.out.println("\nSemana:" + i);
-                        estadoFinal = algoritmo.buscarSolucion();
-                        semana.setEventosSemana(estadoFinal);
-                        i++;
-                    }
+//                     if(semana.comprobarCantidadEventos()) continue;
+//                     
+//                     if(problema.tutoradoSinMaximoNumSesion()){
+//                        System.out.println("\nSemana:" + i);
+//                        estadoFinal = algoritmo.buscarSolucion();
+//                        semana.setEventosSemana(estadoFinal);
+//                        i++;
+//                    }
                      
                     //Generar un ciclo que no termine hasta que la semana actual tenga el maximo numero de eventos asignados
-//                    while(!semana.comprobarCantidadEventos() ){
-//                        //CHECAR:si no genera un ciclo infinito
-//                         if(!problema.tutoradoSinMaximoNumSesion()) break;
-//                            System.out.println("\nSemana:" + i);
-//                            estadoFinal = algoritmo.buscarSolucion();
-//                            semana.concatenarEventosSemana(estadoFinal);
-//                            
-//                        
-//                    }
-//                    i++;
+                    while(!semana.comprobarCantidadEventos() ){
+                        //CHECAR:si no genera un ciclo infinito
+                         if(!problema.tutoradoSinMaximoNumSesion()) break;
+                            System.out.println("\nSemana:" + i);
+                            estadoFinal = algoritmo.buscarSolucion();
+                            semana.concatenarEventosSemana(estadoFinal);
+                            
+                        
+                    }
+                    i++;
                 }
             }
         }

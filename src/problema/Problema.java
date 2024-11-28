@@ -23,7 +23,7 @@ public class Problema extends CSP {
     public static ArrayList<String> variablesAsignadas = new ArrayList();
     private static final int NUM_MINIMO_SESION = 1; //Numero de sesiones minimas por alumno
     private static final int NUM_MAX_SESIONES = 2; //numero de sesiones maxima por alumno
-    private static final int NUM_ALUMNOS =50; //Cantidad de alumnos que vamos agendar una sesion
+    private static final int NUM_ALUMNOS = 25; //Cantidad de alumnos que vamos agendar una sesion
     public static int NUM_PERIODOS = 25;
     
     @Override
@@ -46,32 +46,32 @@ public class Problema extends CSP {
         //Creamos los salones
         ArrayList<String> salones = new ArrayList();
         
-        Periodo p1 = new Periodo("Viernes",12,13,"Genis Triana");
-        Periodo p2 = new Periodo("Viernes",11,12,"Esteban Jesus");
-        Periodo p3 = new Periodo("Viernes",12,13,"Gabriel Antonio");
-        Periodo p4 = new Periodo("Viernes",11,12,"Berenice Padilla");
-        Periodo p5 = new Periodo("Viernes",17,18,"Rafael del Valle");
-        Periodo p6 = new Periodo("Viernes",18,19,"Rafael del Valle");
-        Periodo p7 = new Periodo("Viernes",17,18,"Jose Enrique");
-        Periodo p8 = new Periodo("Martes",13,14,"Delio Camilo Coss");
-        Periodo p9 = new Periodo("Viernes",12,13,"Noemi del Carmen");
-        Periodo p10 = new Periodo("Viernes",8,9,"Silva Jose Hernandez");
-        Periodo p11 = new Periodo("Martes",14,15,"Virgina Campos");
-        Periodo p12 = new Periodo("Viernes",12,13,"Ofelia Giraldi");
-        Periodo p13 = new Periodo("Viernes",16,17,"Hector Perez");
-        Periodo p14 = new Periodo("Lunes",13,14,"Arturo Perez Rendon");
-        Periodo p15 = new Periodo("Viernes",13,14,"Jesus Calleja");
-        Periodo p16 = new Periodo("Viernes",16,17,"Manuel Antonio");
+        Periodo p1 = new Periodo("vie",12,13,"Genis Triana");
+        Periodo p2 = new Periodo("vie",11,12,"Esteban Jesus");
+        Periodo p3 = new Periodo("vie",12,13,"Gabriel Antonio");
+        Periodo p4 = new Periodo("vie",11,12,"Berenice Padilla");
+        Periodo p5 = new Periodo("vie",17,18,"Rafael del Valle");
+        Periodo p6 = new Periodo("vie",18,19,"Rafael del Valle");
+        Periodo p7 = new Periodo("vie",17,18,"Jose Enrique");
+        Periodo p8 = new Periodo("mar",13,14,"Delio Camilo Coss");
+        Periodo p9 = new Periodo("vie",12,13,"Noemi del Carmen");
+        Periodo p10 = new Periodo("vie",8,9,"Silva Jose Hernandez");
+        Periodo p11 = new Periodo("mar",14,15,"Virgina Campos");
+        Periodo p12 = new Periodo("vie",12,13,"Ofelia Giraldi");
+        Periodo p13 = new Periodo("vie",16,17,"Hector Perez");
+        Periodo p14 = new Periodo("lun",13,14,"Arturo Perez Rendon");
+        Periodo p15 = new Periodo("vie",13,14,"Jesus Calleja");
+        Periodo p16 = new Periodo("vie",16,17,"Manuel Antonio");
         
-        Periodo p17 = new Periodo("Viernes",13,14,"Genis Triana");
-        Periodo p18 = new Periodo("Viernes",12,13,"Esteban Jesus");
-        Periodo p19 = new Periodo("Viernes",13,14,"Gabriel Antonio");
-        Periodo p20 = new Periodo("Viernes",12,13,"Berenice Padilla");
-        Periodo p21 = new Periodo("Jueves",13,14,"Delio Camilo Coss");
-        Periodo p22 = new Periodo("Viernes",8,9,"Virgina Campos");
-        Periodo p23 = new Periodo("Martes",10,11,"Ofelia Giraldi");
-        Periodo p24 = new Periodo("Miercoles",13,14,"Arturo Perez Rendon");
-        Periodo p25 = new Periodo("Miercoles",13,14,"Jesus Calleja");
+        Periodo p17 = new Periodo("vie",13,14,"Genis Triana");
+        Periodo p18 = new Periodo("vie",12,13,"Esteban Jesus");
+        Periodo p19 = new Periodo("vie",13,14,"Gabriel Antonio");
+        Periodo p20 = new Periodo("vie",12,13,"Berenice Padilla");
+        Periodo p21 = new Periodo("jue",13,14,"Delio Camilo Coss");
+        Periodo p22 = new Periodo("vie",8,9,"Virgina Campos");
+        Periodo p23 = new Periodo("mar",10,11,"Ofelia Giraldi");
+        Periodo p24 = new Periodo("mie",13,14,"Arturo Perez Rendon");
+        Periodo p25 = new Periodo("mie",13,14,"Jesus Calleja");
 
         periodos.add(p1);
         periodos.add(p2);
@@ -155,7 +155,7 @@ public class Problema extends CSP {
             String[] eventos = new String[listaTutorados.size()];
             
             for(int i=0; i<eventos.length; i++){
-            eventos[i] = "evento" + (i+1);
+            eventos[i] = "e" + (i+1);
         }
             return Arrays.asList(eventos);
         }

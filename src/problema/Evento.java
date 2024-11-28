@@ -64,7 +64,7 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento{" + periodo + " cita con alumno:" + tutorado.getId()+ " Salon:" +salon+ '}';
+        return "[" + periodo + " cita con alumno:" + tutorado.getId()+ " Salon:" +salon+ ']';
     }
     
     
