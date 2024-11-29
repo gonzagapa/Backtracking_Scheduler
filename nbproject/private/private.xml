@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Codigo_CSP">
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/csp/RestriccionEventoPeriodo.java</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/csp/BacktrackingCronologico.java</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/csp/DominioEvento.java</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/csp/RestriccionSesionTutorial.java</file>
+            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Mes.java</file>
+            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Semana.java</file>
+            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Periodo.java</file>
             <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Problema.java</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/datos/datos.txt</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/csp/Estado.java</file>
-            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Evento.java</file>
+            <file>file:/C:/Users/gonza/OneDrive/Escritorio/Investigacion/Codigo_CSP/CSP/src/problema/Main.java</file>
         </group>
     </open-files>
 </project-private>

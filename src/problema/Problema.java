@@ -23,7 +23,7 @@ public class Problema extends CSP {
     public static ArrayList<String> variablesAsignadas = new ArrayList();
     private static int NUM_MINIMO_SESION = 1; //Numero de sesiones minimas por alumno
     private static  int NUM_MAX_SESIONES = 2; //numero de sesiones maxima por alumno
-    private static  int NUM_ALUMNOS = 50; //Cantidad de alumnos que vamos agendar una sesion
+    private static  int NUM_ALUMNOS = 25; //Cantidad de alumnos que vamos agendar una sesion
     public static int NUM_PERIODOS = 25; //NO TOCAR
     
     
