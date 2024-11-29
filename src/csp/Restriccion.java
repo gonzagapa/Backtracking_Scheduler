@@ -1,6 +1,7 @@
-package satisfaccionderestricciones;
+package csp;
 
 import java.util.List;
+import problema.Evento;
 
 /**
  * @author Rafael Rivera-Lopez

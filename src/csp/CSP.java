@@ -1,6 +1,7 @@
-package satisfaccionderestricciones;
+package csp;
 
 import java.util.*;
+import problema.Evento;
 /**
  * @author Rafael Rivera-Lopez
  */
@@ -11,7 +12,7 @@ public abstract class CSP {
   private List<String> variables;
   private HashMap<String, Dominio> dominios; //Guarda los dominios de las diferentes variables
   private List<Restriccion> restricciones;
-  private HashMap<String, List<Restriccion>> restriccionesDeVariable;
+  private HashMap<String, List<Restriccion>> restriccionesDeVariable; //Lista de restricciones por Variable
 
   public abstract void crearVariables();
 
@@ -23,13 +24,15 @@ public abstract class CSP {
     variables = new ArrayList();
     //dominio es una Lista [v1,v2,v3] de una sola variable
     dominios = new HashMap(); //dominios: Guardar la relacion variable y sus valores {x1=dominio,x2,=dominio}
+   
+    
     restricciones = new ArrayList();
     restriccionesDeVariable = new HashMap();
     crearVariables();
     crearDominios();
-    for (String var : variables) {
-      restriccionesDeVariable.put(var, new ArrayList());
-    }
+//    for (String var : variables) {
+//      restriccionesDeVariable.put(var, new ArrayList());
+//    }
     crearRestricciones();
   }
 
@@ -48,6 +51,8 @@ public abstract class CSP {
     return variables.get(k);
   }
 
+  
+  //Cambiar esta variable
   public Dominio getDominio(String var) {
     return dominios.get(var);
   }
@@ -56,7 +61,10 @@ public abstract class CSP {
   public Dominio getDominio(int k){
     return dominios.get(variables.get(k));
   }
+  
+  
 
+  //Probablemente no ocupemos este dominio
   public void setDominio(String var, Dominio dominio) {
     dominios.put(var, dominio);
   }
@@ -71,8 +79,8 @@ public abstract class CSP {
 
   public void addRestriccion(Restriccion restriccion) {
     restricciones.add(restriccion);
-    for (String var : restriccion.getVariables()) {
-      restriccionesDeVariable.get(var).add(restriccion);
-    }
+//    for (String var : restriccion.getVariables()) {
+//      restriccionesDeVariable.get(var).add(restriccion);
+//    }
   }  
 }

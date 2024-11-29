@@ -14,7 +14,7 @@ public class Tutor {
     
     private int id; 
     private String nombre; 
-    private ArrayList<Tutorado> tutorados;
+    private ArrayList<Tutorado> tutorados  = new ArrayList();
 
     public Tutor(String nombre) {
         this.id = ++totalTutores;
@@ -27,6 +27,8 @@ public class Tutor {
         this.id = id;
         tutorados = new ArrayList<>();
     }
+    
+    public Tutor(){}
 
     public int getId() {
         return id;
@@ -49,12 +51,19 @@ public class Tutor {
     }
 
     public void añadirTutorado(Tutorado tutorado){
-        tutorados.add(tutorado);
+        if(!tutorados.contains(tutorado)) tutorados.add(tutorado);
+        tutorado.aumentarSesion();
     }
 
+    public static Tutor buscarTutor(String nombreTutor){
+        for(Tutor tutor: tutores){
+            if(tutor.nombre.equalsIgnoreCase(nombreTutor)) return tutor;
+        }
+        return null;
+    }
     @Override
     public String toString() {
-        return "Tutor{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "Tutor{" + "id=" + id + ", nombre=" + nombre +" tutorados: " + tutorados.toString()+'}';
     }
     
     
