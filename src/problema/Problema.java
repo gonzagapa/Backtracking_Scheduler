@@ -4,11 +4,11 @@ package problema;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import satisfaccionderestricciones.CSP;
-import satisfaccionderestricciones.Dominio;
-import satisfaccionderestricciones.DominioEvento;
-import satisfaccionderestricciones.RestriccionEventoPeriodo;
-import satisfaccionderestricciones.RestriccionSesionTutorial;
+import csp.CSP;
+import csp.Dominio;
+import csp.DominioEvento;
+import csp.RestriccionEventoPeriodo;
+import csp.RestriccionSesionTutorial;
 
 /**
  *
@@ -21,10 +21,49 @@ public class Problema extends CSP {
     public static ArrayList<Periodo> periodos = new ArrayList();
     private static ArrayList<Periodo> periodosRestantesSemana = new ArrayList();
     public static ArrayList<String> variablesAsignadas = new ArrayList();
-    private static final int NUM_MINIMO_SESION = 1; //Numero de sesiones minimas por alumno
-    private static final int NUM_MAX_SESIONES = 2; //numero de sesiones maxima por alumno
-    private static final int NUM_ALUMNOS = 25; //Cantidad de alumnos que vamos agendar una sesion
-    public static int NUM_PERIODOS = 25;
+    private static int NUM_MINIMO_SESION = 1; //Numero de sesiones minimas por alumno
+    private static  int NUM_MAX_SESIONES = 2; //numero de sesiones maxima por alumno
+    private static  int NUM_ALUMNOS = 50; //Cantidad de alumnos que vamos agendar una sesion
+    public static int NUM_PERIODOS = 25; //NO TOCAR
+    
+    
+    public Problema(){
+    
+    }
+
+    public static int getNUM_MINIMO_SESION() {
+        return NUM_MINIMO_SESION;
+    }
+
+    public static void setNUM_MINIMO_SESION(int NUM_MINIMO_SESION) {
+        Problema.NUM_MINIMO_SESION = NUM_MINIMO_SESION;
+    }
+
+    public static int getNUM_MAX_SESIONES() {
+        return NUM_MAX_SESIONES;
+    }
+
+    public static void setNUM_MAX_SESIONES(int NUM_MAX_SESIONES) {
+        Problema.NUM_MAX_SESIONES = NUM_MAX_SESIONES;
+    }
+
+    public static int getNUM_ALUMNOS() {
+        return NUM_ALUMNOS;
+    }
+
+    public static void setNUM_ALUMNOS(int NUM_ALUMNOS) {
+        Problema.NUM_ALUMNOS = NUM_ALUMNOS;
+    }
+
+    public static int getNUM_PERIODOS() {
+        return NUM_PERIODOS;
+    }
+
+    public static void setNUM_PERIODOS(int NUM_PERIODOS) {
+        Problema.NUM_PERIODOS = NUM_PERIODOS;
+    }
+    
+    
     
     @Override
     public void crearVariables(){

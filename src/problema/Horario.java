@@ -1,9 +1,10 @@
 
 package problema;
 
+import java.io.File;
 import java.util.ArrayList;
-import satisfaccionderestricciones.BacktrackingCronologico;
-import satisfaccionderestricciones.Estado;
+import csp.BacktrackingCronologico;
+import csp.Estado;
 
 /**
  *
@@ -12,16 +13,18 @@ import satisfaccionderestricciones.Estado;
 public class Horario {
     private ArrayList<Mes> meses = new ArrayList();
     //Aqui indicamos si queremos que nuestra solucion incluya la restriccion suave o no 
-   private static final boolean ASIGNAR_MAXIMO_NUMERO_SESIONES = false; 
-
-    public Horario() {
+   private static final boolean ASIGNAR_MAXIMO_NUMERO_SESIONES = true; 
+    private String nombreArchivo;
+    public Horario(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
     }
+    public Horario(){}
     
     
     
     public void generarHorario(){
         //Ingresamos los meses 
-        meses.add(new Mes("Septiembre"));
+        meses.add(new Mes("Septiembre")); // 25 periodos 
         //meses.add(new Mes("Octubre"));
 
         //Generamos la instancia del problema
