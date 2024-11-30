@@ -51,7 +51,7 @@ public class Semana {
     //Metodo que comprueba si los eventos agendados en esa semana es igual a la cantidad de periodos totales del problema
     public boolean comprobarCantidadEventos(){
         System.out.println("Eventos agendados en " + nombreSemana + ":" + eventosSemana.size());
-        return eventosSemana.size() >= Problema.NUM_PERIODOS; 
+        return eventosSemana.size() >= Problema.getNUM_PERIODOS(); 
     }
     
 

@@ -29,7 +29,9 @@ public class Horario {
 
         //Generamos la instancia del problema
        Problema problema = new Problema();
+       problema.extrarDatos(Problema.class.getResourceAsStream("/datos/datos.txt"));
        problema.configurarProblema();
+      
        Estado estadoFinal = ejecutarAlgoritmo(problema, ASIGNAR_MAXIMO_NUMERO_SESIONES);   
        
       

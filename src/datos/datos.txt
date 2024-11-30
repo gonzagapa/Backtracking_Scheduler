@@ -1,31 +1,32 @@
-//Archivo para ingresar los datos necesarios para el horario
-//Num_alumnos,num_periodos,min_sesion,max_sesion
-d 25,25,1,2%
-//Ingresa periodos
-p(vie,12,13,"Genis Triana")%
-p("vie",11,12,"Esteban Jesus")%
-p("vie",12,13,"Gabriel Antonio")%
-p("vie",11,12,"Berenice Padilla")%
-p("vie",17,18,"Rafael del Valle")%
-p("vie",18,19,"Rafael del Valle")%
-p("vie",17,18,"Jose Enrique")%
-p("mar",13,14,"Delio Camilo Coss")%
-p("vie",12,13,"Noemi del Carmen")%
-p("vie",8,9,"Silva Jose Hernandez")%
-p("mar",14,15,"Virgina Campos")%
-p("vie",12,13,"Ofelia Giraldi")%
-p("vie",16,17,"Hector Perez")%
-p("lun",13,14,"Arturo Perez Rendon")%
-p("vie",13,14,"Jesus Calleja")%
-p("vie",16,17,"Manuel Antonio")%
-p("vie",13,14,"Genis Triana)"%
-p("vie",12,13,"Esteban Jesus")%
-p("vie",13,14,"Gabriel Antonio")
-p("vie",12,13,"Berenice Padilla")
-p("jue",13,14,"Delio Camilo Coss)"
-p("vie",8,9,"Virgina Campos")
-p("mar",10,11,"Ofelia Giraldi")
-p("mie",13,14,"Arturo Perez Rendon");
-p("mie",13,14,"Jesus Calleja");
-//Ingresa salones
-s e001,e216,u004,e003,e202,u107,e104,o101
+/Archivo para ingresar los datos necesarios para el horario
+/Num_alumnos num_periodos min_sesion max_sesion
+d 25 25 1 2
+/Ingresa periodos
+p (vie,12,13,Genis Triana)
+p (vie,11,12,Esteban Jesus)
+p (vie,12,13,Gabriel Antonio)
+p (vie,11,12,Berenice Padilla)
+p (vie,17,18,Rafael del Valle)
+p (vie,18,19,Rafael del Valle)
+p (vie,17,18,Jose Enrique)
+p (mar,13,14,Delio Camilo Coss)
+p (vie,12,13,Noemi del Carmen)
+p (vie,8,9,Silva Jose Hernandez)
+p (mar,14,15,Virgina Campos)
+p (vie,12,13,Ofelia Giraldi)
+p (vie,16,17,Hector Perez)
+p (lun,13,14,Arturo Perez Rendon)
+p (vie,13,14,Jesus Calleja)
+p (vie,16,17,Manuel Antonio)
+p (vie,13,14,Genis Triana)
+p (vie,12,13,Esteban Jesus)
+p (vie,13,14,Gabriel Antonio)
+p (vie,12,13,Berenice Padilla)
+p (jue,13,14,Delio Camilo)
+p (vie,8,9,Virgina Campos)
+p (mar,10,11,Ofelia Giraldi)
+p (mie,13,14,Arturo Perez Rendon)
+p (mie,13,14,Jesus Calleja)
+/Ingresa salones
+s e001 e216 u004 e003 e202 u107 e104 o101
+$

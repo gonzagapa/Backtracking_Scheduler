@@ -13,6 +13,7 @@ public class Main {
          
        Horario horario = new Horario();
        horario.generarHorario();
-     
+       
+        
     }
 }
